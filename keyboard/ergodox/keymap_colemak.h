@@ -1,3 +1,8 @@
+/*
+ * References:
+ * https://github.com/tmk/tmk_keyboard/blob/master/doc/keymap.md
+ * https://github.com/tmk/tmk_keyboard/blob/master/doc/keycode.txt
+ */
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      /* Layer 0: QWERTY (Gaming)
