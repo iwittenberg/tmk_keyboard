@@ -68,16 +68,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      */
-    KEYMAP( // Layer 3: Function and Media Keys
+    KEYMAP( 
         // Left Hand
          TRNS, TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
          TRNS, Q,     W,     F,     P,     P,     TRNS,
          TRNS, A,     R,     S,     T,     D,
          TRNS, Z,     X,     C,     V,     B,     TRNS,
          TRNS, TRNS,  TRNS,  TRNS,  TRNS,
-                                      TRNS, TRNS,
-                                          TRNS,
-                                  TRNS, TRNS, TRNS,
+                                            TRNS, TRNS,
+                                                  TRNS,
+                                      TRNS, TRNS, TRNS,
         // Right Hand
              TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  FN6,
              TRNS,  J,     L,     U,     Y,     SCLN,  TRNS,
@@ -89,7 +89,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS, TRNS, TRNS
     ),
 
-     /* Layer 1
+     /* Layer 2: Brackets and VIM Everywhere
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      | TEENSY |
@@ -110,7 +110,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      */
-    KEYMAP( // Layer 1: Function and Media Keys
+    KEYMAP(
         // Left Hand
          TRNS,   TRNS,  TRNS,  TRNS,  TRNS, TRNS,  TRNS,
          TRNS,   TRNS,  TRNS,  FN1,   FN2,  TRNS,  TRNS,
@@ -152,7 +152,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      */
-    //KEYMAP( // Layer 3: Function and Media Keys
+    //KEYMAP( 
         //// Left Hand
          //TRNS, TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
          //TRNS, TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
