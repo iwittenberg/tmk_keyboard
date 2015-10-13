@@ -53,7 +53,7 @@ https://github.com/cub-uanic/tmk_keyboard/tree/master
     make -f Makefile.lufa cub
 
     # use teensy_loader_cli to reflash
-    teensy-loader-cli -mmcu=atmega32u4 -w -v ergodox_lufa.hex
+    teensy_loader_cli -mmcu=atmega32u4 -w -v ergodox_lufa.hex
 
 # Layouts
 
