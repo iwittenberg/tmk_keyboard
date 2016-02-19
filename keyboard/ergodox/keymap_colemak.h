@@ -1,14 +1,14 @@
 /*
  * References:
- * https://github.com/tmk/tmk_keyboard/blob/master/doc/keymap.md
- * https://github.com/tmk/tmk_keyboard/blob/master/doc/keycode.txt
+ * https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keymap.md
+ * https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keycode.txt
  */
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      /* Layer 0: QWERTY (Gaming)
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |  +L2   |
+     * |  Esc   |   1  |   2  |   3  |   4  |   5  | PLAY |           |      |   6  |   7  |   8  |   9  |   0  |  +L2   |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -16,10 +16,10 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+------+------+------+------+------|  -   |           |  =   |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LCtrl| LAlt | Home | End  | LGui |                                       | Left | Down |  Up  | Right| RGui |
+     *   | LCtrl| LAlt | Home | End  | LGui |                                       | Left | Down |  Up  | Right| PWR  |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |      |      |       |      |      |
+     *                                        |  V+  |  V-  |       | A_NXT| A_PRV|
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |      |       |      |      |      |
      *                                 |Space | Enter|------|       |------| Del  | BkSp |
@@ -28,12 +28,12 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(
         // Left Hand
-        ESC,   1,    2,    3,   4,   5,  NO, 
+        ESC,   1,    2,    3,   4,   5,  MEDIA_PLAY_PAUSE, 
         TAB,   Q,    W,    E,   R,   T,  NO,
         FN0,   A,    S,    D,   F,   G,
         LSFT,  Z,    X,    C,   V,   B,  MINS,
         LCTRL, LALT, HOME, END, LGUI,
-                                       NO,NO,
+                                       AUDIO_VOL_UP, AUDIO_VOL_DOWN,
                                           NO,
                                   SPC,ENT,NO,
         // Right Hand
@@ -41,8 +41,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             NO,   Y,   U,    I,    O,   P,    BSLS,
                   H,   J,    K,    L,   SCLN, QUOT,
             EQL,  N,   M,    COMM, DOT, SLSH, RSFT,
-                       LEFT, DOWN, UP,  RGHT, RGUI,
-        NO, NO,
+                       LEFT, DOWN, UP,  RGHT, POWER,
+        MEDIA_PREV_TRACK, MEDIA_NEXT_TRACK,
         NO,
         GRV, DEL, BSPC
     ),
@@ -71,7 +71,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP( 
         // Left Hand
          TRNS, TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
-         TRNS, Q,     W,     F,     P,     P,     TRNS,
+         TRNS, Q,     W,     F,     P,     G,     TRNS,
          TRNS, A,     R,     S,     T,     D,
          TRNS, Z,     X,     C,     V,     B,     TRNS,
          TRNS, TRNS,  TRNS,  TRNS,  TRNS,
@@ -92,7 +92,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /* Layer 2: Brackets and VIM Everywhere
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      | TEENSY |
+     * |        |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |           |  F12 |  F6  |  F7  |  F8  |  F9  |  F10 | TEENSY |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |        |      |      | {    |   }  |      |      |           |      |      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -112,7 +112,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(
         // Left Hand
-         TRNS,   TRNS,  TRNS,  TRNS,  TRNS, TRNS,  TRNS,
+         TRNS,     F1,    F2,   F3,    F4,    F5,   F11,
          TRNS,   TRNS,  TRNS,  FN1,   FN2,  TRNS,  TRNS,
          TRNS,   TRNS,  TRNS,  FN3,   FN4,  TRNS,
          TRNS,   TRNS,  TRNS,  LBRC,  RBRC, TRNS,  TRNS,
@@ -121,7 +121,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             TRNS,
                                             TRNS, TRNS, TRNS,
         // Right Hand
-             TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  FN5,
+              F12,    F6,    F7,    F8,    F9,   F10,  FN5,
              TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
                     LEFT,  DOWN,  UP,    RGHT,  TRNS,  TRNS,
              TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,
